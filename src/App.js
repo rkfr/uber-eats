@@ -1,15 +1,15 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import { store } from './store';
 import { RestaurantsListPage } from './components/RestaurantsListPage';
+import { Header } from './components/Header';
 
 const App = () => (
-  <Provider store={store}>
-    <div className="page">
-      <h1>Uber eats</h1>
+  <div className="page">
+    <Header />
+    <main className="content">
       <RestaurantsListPage />
-    </div>
-  </Provider>
+    </main>
+    <footer>footer</footer>
+  </div>
 );
 
 export default App;
