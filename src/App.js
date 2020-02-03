@@ -1,6 +1,7 @@
 import React from 'react';
 import { RestaurantsListPage } from './components/RestaurantsListPage';
 import { Header } from './components/Header';
+import { Footer } from './components/Footer';
 
 const App = () => (
   <div className="page">
@@ -8,7 +9,7 @@ const App = () => (
     <main className="content">
       <RestaurantsListPage />
     </main>
-    <footer>footer</footer>
+    <Footer />
   </div>
 );
 

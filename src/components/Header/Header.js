@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import './Header.scss';
 
 import { Input } from '../Input';
@@ -63,5 +62,3 @@ export class Header extends Component {
     );
   }
 }
-
-Header.propTypes = {};
