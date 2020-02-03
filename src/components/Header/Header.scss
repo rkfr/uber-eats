@@ -1,7 +1,11 @@
 @import '../../styles/extends.scss';
 
 .header {
-  padding: 28px 0;
+  position: sticky;
+  top: 0;
+  padding: 15px 0;
+
+  background-color: #fff;
 
   &__inner {
     @extend %flex-row-center;

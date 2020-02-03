@@ -5,7 +5,19 @@ import './Header.scss';
 import { Input } from '../Input';
 
 export class Header extends Component {
+  state = {
+    address: '',
+    time: '',
+    search: '',
+  };
+
+  handleChange = ({ target }) => {
+    this.setState({ [target.name]: target.value });
+  };
+
   render() {
+    const { address, time, search } = this.state;
+
     return (
       <header className="header">
         <div className="content">
@@ -15,25 +27,26 @@ export class Header extends Component {
             <div className="header__delivery-info">
               <Input
                 name="address"
-                value=""
+                value={address}
                 placeholder="Address"
                 iconUrl="./images/place.svg"
-                onChange={() => console.log('changed')}
+                onChange={this.handleChange}
               />
               <Input
                 name="time"
-                value=""
+                value={time}
                 placeholder="Time"
-                onChange={() => console.log('changed')}
+                type="time"
+                onChange={this.handleChange}
               />
             </div>
 
             <Input
               name="search"
-              value=""
+              value={search}
               placeholder="Search"
               iconUrl="./images/search.svg"
-              onChange={() => console.log('changed')}
+              onChange={this.handleChange}
               className="header__search"
             />
 
