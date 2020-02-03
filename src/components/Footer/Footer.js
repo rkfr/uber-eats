@@ -1,6 +1,8 @@
 import React from 'react';
 import './Footer.scss';
 
+import { Select } from '../Select';
+
 export const Footer = () => (
   <footer className="footer">
     <div className="content">
@@ -12,7 +14,15 @@ export const Footer = () => (
               src="./images/logo-white.svg"
               alt="Uber eats"
             />
-            <div>Language</div>
+            <Select
+              name="Language"
+              options={[
+                { value: 'en', label: 'English' },
+                { value: 'ru', label: 'Russian' },
+              ]}
+              value="en"
+              iconUrl="./images/world.svg"
+            />
           </div>
 
           <div className="footer__mobile-apps">
