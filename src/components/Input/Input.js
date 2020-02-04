@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { PureComponent, createRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -25,41 +26,54 @@ export class Input extends PureComponent {
       placeholder,
       name,
       className,
+      isSmall,
+      label,
     } = this.props;
 
     const { isFocused } = this.state;
 
-    const rootClass = classNames('control', {
-      'control--focused': isFocused,
+    const inputWrapperClass = classNames('control__input-wrapper', {
+      'control__input-wrapper--focused': isFocused,
       [className]: !!className,
     });
 
+    const inputClass = classNames('control__input', {
+      'control__input--small': isSmall,
+    });
+
     return (
-      <div
-        className={rootClass}
-        onClick={this.focus}
-        role="presentation"
-      >
-        {!!iconUrl && (
+      <label className="control">
+        {label && (
+        <p className="control__label">
+          {label}
+        </p>
+        )}
+        <div
+          className={inputWrapperClass}
+          onClick={this.focus}
+          role="presentation"
+        >
+          {!!iconUrl && (
           <img
             src={iconUrl}
             alt={placeholder}
             className="control__icon"
           />
-        )}
+          )}
 
-        <input
-          ref={this.inputRef}
-          name={name}
-          type={type}
-          value={value}
-          placeholder={placeholder}
-          onChange={onChange}
-          onFocus={this.handleFocus}
-          onBlur={this.handleBlur}
-          className="control__input"
-        />
-      </div>
+          <input
+            ref={this.inputRef}
+            name={name}
+            type={type}
+            value={value}
+            placeholder={placeholder}
+            onChange={onChange}
+            onFocus={this.handleFocus}
+            onBlur={this.handleBlur}
+            className={inputClass}
+          />
+        </div>
+      </label>
     );
   }
 }
@@ -72,6 +86,8 @@ Input.propTypes = {
   placeholder: PropTypes.string,
   iconUrl: PropTypes.string,
   className: PropTypes.string,
+  label: PropTypes.string,
+  isSmall: PropTypes.bool,
 };
 
 Input.defaultProps = {
@@ -79,4 +95,6 @@ Input.defaultProps = {
   placeholder: '',
   iconUrl: '',
   className: '',
+  label: '',
+  isSmall: true,
 };
