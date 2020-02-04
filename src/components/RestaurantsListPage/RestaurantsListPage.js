@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './RestaurantsListPage.scss';
 
 import { Loader } from '../Loader';
-
+import { Error } from '../Error';
 import { RestaurantCard } from '../RestaurantCard';
 
 const DEFAULT_ETA_RANGE = '20 - 30 min';
@@ -20,6 +20,10 @@ class RestaurantsListPage extends Component {
 
     if (isLoading) {
       return <Loader />;
+    }
+
+    if (error) {
+      return <Error message={console.error()} />;
     }
 
     return (

@@ -1,0 +1,20 @@
+@import '../../styles/utils.scss';
+
+.error {
+  @extend %absolute-center;
+  flex-flow: column nowrap;
+
+  &__text {
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  &__link {
+    font-style: 18px;
+    color: $color-green;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

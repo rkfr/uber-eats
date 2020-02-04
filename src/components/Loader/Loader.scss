@@ -1,13 +1,7 @@
-.loader-container {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+@import '../../styles/utils.scss';
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.loader-container {
+  @extend %absolute-center
 }
 
 .lds-default {
@@ -21,7 +15,7 @@
   position: absolute;
   width: 6px * 2;
   height: 6px * 2;
-  background: #5eb707;
+  background: $color-green;
   border-radius: 50%;
   animation: lds-default 1.2s linear infinite;
 }
