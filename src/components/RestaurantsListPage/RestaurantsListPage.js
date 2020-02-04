@@ -23,7 +23,8 @@ class RestaurantsListPage extends Component {
     }
 
     if (error) {
-      return <Error message={console.error()} />;
+      // eslint-disable-next-line no-console
+      return <Error message={console.log(error)} />;
     }
 
     return (

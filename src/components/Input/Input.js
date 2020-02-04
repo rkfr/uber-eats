@@ -39,6 +39,7 @@ export class Input extends PureComponent {
 
     const inputClass = classNames('control__input', {
       'control__input--small': isSmall,
+      'control__input--time': type === 'time',
     });
 
     return (

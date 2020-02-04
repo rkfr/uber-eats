@@ -1,3 +1,5 @@
+@import './utils.scss';
+
 *,
 ::after,
 ::before {
@@ -34,4 +36,12 @@ input {
   max-width: 1160px;
   padding: 0 34px;
   margin: 0 auto;
+
+  @media (max-width: $break-point-phone) {
+    padding: 0 20px;
+  }
+
+  @media (min-width: $break-point-large) {
+    max-width: 1520px;
+  }
 }
